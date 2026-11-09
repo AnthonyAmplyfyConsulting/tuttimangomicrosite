@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf7ed">
+  <meta name="description" content="Drop the mango and see which Tutti Mango reward it lands on.">
+  <title>Play Mango Drop | Tutti Mango</title>
+  <link rel="icon" href="../mango.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../game.js" type="module"></script>
+</head>
+<body class="game-page">
+  <main class="game page">
+    <header class="game-header">
+      <a class="back" href="../" aria-label="Back to home"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg></a>
+      <img class="logo game-logo" src="../tutti-mango.webp" width="527" height="247" alt="Tutti Mango Fruit Cuisine">
+    </header>
+    <h1 class="instruction">Tap to drop the mango.</h1>
+    <div class="board">
+      <svg class="playfield" viewBox="0 0 360 350" aria-hidden="true">
+        <g id="pegs"></g>
+        <image id="ball" href="../mango.svg" x="-17" y="-17" width="34" height="34" transform="translate(180 23)"/>
+      </svg>
+      <div class="slots" aria-label="Possible rewards">
+        <span class="slot">$1 OFF</span>
+        <span class="slot">$2 OFF</span>
+        <span class="slot">FREE SMALL</span>
+      </div>
+    </div>
+    <button class="action" id="drop" type="button">Drop mango</button>
+    <p class="sr-only" id="status" role="status"></p>
+    <noscript><p>Enable JavaScript to play Mango Drop.</p></noscript>
+  </main>
+
+  <dialog id="reward" aria-labelledby="prize-title" aria-describedby="prize-note">
+    <form method="dialog">
+      <button class="close" value="close" aria-label="Close reward">×</button>
+    </form>
+    <div class="reward-content">
+      <img class="logo reward-logo" src="../tutti-mango.webp" width="527" height="247" alt="Tutti Mango Fruit Cuisine">
+      <p class="reward-kicker">You won!</p>
+      <div class="reward-product">
+        <div class="reward-sparks" aria-hidden="true">
+          <span>✦</span><span>✧</span><span>✦</span><span>✧</span>
+        </div>
+        <img src="../eves-mangonada.webp" width="370" height="760" alt="Tutti Mango’s Eve’s Mangonada with mango chunks and a tamarind straw">
+      </div>
+      <div class="reward-ticket">
+        <h2 id="prize-title"></h2>
+        <p class="reward-detail" id="prize-detail">Eve’s Mangonada</p>
+        <p class="reward-note" id="prize-note">Demo coupon · No in-store redemption</p>
+      </div>
+      <button class="action" id="again" type="button">Play again</button>
+    </div>
+  </dialog>
+</body>
+</html>
